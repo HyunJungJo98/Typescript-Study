@@ -1,44 +1,16 @@
+import { interfaceFunction } from "./CodingDevil/interfaceFunction";
+import { classInterfaceExtends } from './CodingDevil/classInterfaceExtends';
+import { UserClass } from "./CodingDevil/interface";
+import { Efuction } from "./CodingDevil/function"
 import * as CryptoJS from "crypto-js"
 
-class Block {
-    public index:number;
-    public hash: string;
-    public previousHash : string;
-    public data : string;
-    public timestamp : number;
+new UserClass();
+new interfaceFunction();
 
-    static calculate = (
-        index:number,
-        previousHash:string,
-        timestamp:number,
-        data:string
-    ) : string => CryptoJS.SHA256(index + previousHash + timestamp + data).toString();
+const ci = new classInterfaceExtends('red');
+ci.start();
+ci.example();
 
-    constructor(
-        index:number,
-        hash:string,
-        previousHash:string,
-        data:string,
-        timestamp:number
-    ){
-        this.index = index;
-        this.hash = hash;
-        this.previousHash = previousHash;
-        this.data = data;
-        this.timestamp = timestamp;
-    }
-}
-
-const genesisBlock:Block = new Block(0, "11", "", "hello", 123456)
-
-let blockchain : Block[] = [genesisBlock];
-blockchain.push(genesisBlock)
-console.log(blockchain);
-
-const getBlockchain = () : Block[] => blockchain;
-
-const getLatestBlock = () : Block => getBlockchain[blockchain.length - 1];
-
-const getNewTimeStamp = () : number => Math.round(new Date().getTime()/1000)
+new Efuction();
 
 export {};

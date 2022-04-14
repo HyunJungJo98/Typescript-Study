@@ -1,21 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const CryptoJS = require("crypto-js");
-class Block {
-    constructor(index, hash, previousHash, data, timestamp) {
-        this.index = index;
-        this.hash = hash;
-        this.previousHash = previousHash;
-        this.data = data;
-        this.timestamp = timestamp;
-    }
-}
-Block.calculate = (index, previousHash, timestamp, data) => CryptoJS.SHA256(index + previousHash + timestamp + data).toString();
-const genesisBlock = new Block(0, "11", "", "hello", 123456);
-let blockchain = [genesisBlock];
-blockchain.push(genesisBlock);
-console.log(blockchain);
-const getBlockchain = () => blockchain;
-const getLatestBlock = () => getBlockchain[blockchain.length - 1];
-const getNewTimeStamp = () => Math.round(new Date().getTime() / 1000);
+const interfaceFunction_1 = require("./CodingDevil/interfaceFunction");
+const classInterfaceExtends_1 = require("./CodingDevil/classInterfaceExtends");
+const interface_1 = require("./CodingDevil/interface");
+const function_1 = require("./CodingDevil/function");
+new interface_1.UserClass();
+new interfaceFunction_1.interfaceFunction();
+const ci = new classInterfaceExtends_1.classInterfaceExtends('red');
+ci.start();
+ci.example();
+new function_1.Efuction();
 //# sourceMappingURL=index.js.map
