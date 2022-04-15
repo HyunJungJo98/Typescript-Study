@@ -50,6 +50,9 @@ function showName(this:User, age:number, gender:'f'|'m') {
     console.log(this.name);
 }
 
+const a = showName.bind(Sam);
+a(30, 'f');
+
 // 오버로드 : 같은 함수이나 매개변수의 타입, 개수에 따라 다른 방식으로 동작
 function join(name:string, age:number) : User;
 function join(name:string, age:string) : string;
@@ -64,9 +67,6 @@ function join(name:string, age:number | string) : User | string{
         return "나이는 숫자로 입력해주세요";
     }
 }
-
-const a = showName.bind(Sam);
-a(30, 'f');
 
 //반환 값이 User 또는 string이기 때문에 확신이 없음
 // 53번째 줄 추가
