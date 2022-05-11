@@ -1,1 +1,2 @@
-# Typescript-Study
+# Typescript 공부
+노마드코더, 코딩앙마 강의를 듣고 공부한 내용입니다.
